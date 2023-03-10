@@ -29,4 +29,9 @@ class ApplicationController < ActionController::Base
     }
     cookies[:cart]
   end
+
+  def empty_cart
+    "Your cart is empty! To add to your cart, please visit the "
+  end
+  helper_method :empty_cart
 end
