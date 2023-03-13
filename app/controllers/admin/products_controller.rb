@@ -1,7 +1,7 @@
 class Admin::ProductsController < ApplicationController
 
-  #ask mentor about auth bug
-  http_basic_authenticate_with name: "Jungle", password: "book"
+  
+  http_basic_authenticate_with name: ENV["ADMIN_USERNAME"], passowrd: ENV["ADMIN_PASSWORD"]
   def index
     @products = Product.order(id: :desc).all
   end
